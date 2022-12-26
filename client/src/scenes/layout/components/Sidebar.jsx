@@ -1,6 +1,7 @@
-import { ChevronLeft } from "@mui/icons-material";
+import { ChevronLeft, SettingsOutlined } from "@mui/icons-material";
 import {
   Box,
+  Divider,
   Drawer,
   IconButton,
   List,
@@ -13,14 +14,16 @@ import {
 } from "@mui/material";
 import FlexBetween from "components/FlexBetween";
 import React, { useState } from "react";
-import { NavLink, useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import sidebarNavItems from "./sidebaritems";
+import profilePicture from "assets/images/profilePicture.jpg";
 
 const Sidebar = ({
   isMobile,
   isSidebarOpen,
   setIsSidebarOpen,
   drawerWidth,
+  user,
 }) => {
   const theme = useTheme();
   const navigate = useNavigate();
@@ -70,17 +73,17 @@ const Sidebar = ({
                 const { text, icon } = item;
                 if (!icon) {
                   return (
-                    <Typography key={text} marginTop="20px">
+                    <Typography key={text} marginTop="15px">
                       {text}
                     </Typography>
                   );
                 }
                 return (
-                  <ListItem disablePadding>
+                  <ListItem disablePadding key={text}>
                     <ListItemButton
                       onClick={() => handleNavigation(text)}
                       sx={{
-                        padding: "6px 2px",
+                        padding: "5px 2px",
                         backgroundColor:
                           activeNav === text.toLowerCase()
                             ? theme.palette.secondary[300]
@@ -108,6 +111,36 @@ const Sidebar = ({
               })}
             </List>
           </Box>
+          <Divider />
+          <FlexBetween p="15px 20px" gap="5px">
+            <Box
+              component="img"
+              src={profilePicture}
+              alt="Profile Pic"
+              width="40px"
+              height="40px"
+              borderRadius="50%"
+              sx={{ objectFit: "cover" }}
+            />
+            <Box textAlign={"left"}>
+              <Typography
+                fontWeight={"bold"}
+                fontSize={"11px"}
+                sx={{ color: theme.palette.secondary[100] }}
+              >
+                {user.name}
+              </Typography>
+              <Typography
+                fontSize={"11px"}
+                sx={{ color: theme.palette.secondary[200] }}
+              >
+                {user.occupation}
+              </Typography>
+            </Box>
+            <IconButton>
+              <SettingsOutlined sx={{ color: theme.palette.secondary[300] }} />
+            </IconButton>
+          </FlexBetween>
         </Drawer>
       )}
     </Box>
