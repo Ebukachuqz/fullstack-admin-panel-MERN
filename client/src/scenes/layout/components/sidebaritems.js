@@ -26,7 +26,7 @@ const sidebarNavItems = [
     icon: <ShoppingCartOutlined />,
   },
   {
-    text: "Users",
+    text: "Customers",
     icon: <Groups2Outlined />,
   },
   {

@@ -12,10 +12,12 @@ const mongoose = require("mongoose");
 const generalRoute = require("./routes/generalRoute");
 const managementRoute = require("./routes/managementRoute");
 const salesRoute = require("./routes/salesRoute");
-const usersRoute = require("./routes/usersRoute");
+const clientRoute = require("./routes/clientRoute");
 const User = require("./models/User");
-const { dataUser } = require("./mock/data");
+const { dataUser, dataProduct, dataProductStat } = require("./mock/data");
 const errorHandler = require("./middlewares/errorHandler");
+const Product = require("./models/Product");
+const ProductStat = require("./models/ProductStat");
 
 // Configurations
 const app = express();
@@ -30,7 +32,7 @@ app.use(cors());
 
 // Routes
 app.use("/general", generalRoute);
-app.use("/users", usersRoute);
+app.use("/client", clientRoute);
 app.use("/sales", salesRoute);
 app.use("/management", managementRoute);
 
@@ -47,5 +49,7 @@ mongoose
 
     /* Run this just once to add mock data to db */
     // User.insertMany(dataUser);
+    // Product.insertMany(dataProduct);
+    // ProductStat.insertMany(dataProductStat);
   })
   .catch((error) => console.log(error));

@@ -27,7 +27,7 @@ const Sidebar = ({
 }) => {
   const theme = useTheme();
   const navigate = useNavigate();
-  const [activeNav, setActiveNav] = useState("");
+  const [activeNav, setActiveNav] = useState("dashboard");
 
   const handleNavigation = (text) => {
     const navText = text.toLowerCase();
