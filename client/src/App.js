@@ -7,7 +7,8 @@ import { themeSettings } from "theme";
 import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "scenes/dashboard/Index";
 import Layout from "scenes/layout/Index";
-import Products from "scenes/products/Index";
+import Products from "scenes/clients/products/Index";
+import Customers from "scenes/clients/customers/Index";
 
 function App() {
   const mode = useSelector(getMode);
@@ -25,6 +26,7 @@ function App() {
               />
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
+              <Route path="/customers" element={<Customers />} />
             </Route>
           </Routes>
         </ThemeProvider>

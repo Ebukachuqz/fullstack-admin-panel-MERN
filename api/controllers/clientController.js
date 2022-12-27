@@ -1,5 +1,6 @@
 const Product = require("../models/Product");
 const ProductStat = require("../models/ProductStat");
+const User = require("../models/User");
 
 const getAllProductsWithStats = async (req, res) => {
   const products = await Product.find();
@@ -18,4 +19,9 @@ const getAllProductsWithStats = async (req, res) => {
   return res.status(200).json(productsWithStats);
 };
 
-module.exports = { getAllProductsWithStats };
+const getCustomers = async (req, res) => {
+  const customers = await User.find({ role: "user" }).select("-password");
+  res.status(200).json(customers);
+};
+
+module.exports = { getAllProductsWithStats, getCustomers };
