@@ -34,7 +34,7 @@ const sidebarNavItems = [
     icon: <ReceiptLongOutlined />,
   },
   {
-    text: "Geography",
+    text: "Geolocation",
     icon: <PublicOutlined />,
   },
   {

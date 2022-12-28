@@ -28,7 +28,7 @@ const Layout = () => {
           setIsSidebarOpen={setIsSidebarOpen}
           isSidebarOpen={isSidebarOpen}
         />
-        <Container>
+        <Container sx={{ paddingBottom: "30px" }}>
           <Outlet />
         </Container>
       </Box>
