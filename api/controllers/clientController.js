@@ -2,6 +2,7 @@ const Product = require("../models/Product");
 const ProductStat = require("../models/ProductStat");
 const Transaction = require("../models/Transaction");
 const User = require("../models/User");
+const getCountryIso3 = require("country-iso-2-to-3");
 
 const getAllProductsWithStats = async (req, res) => {
   const products = await Product.find();
@@ -56,4 +57,33 @@ const getTransactions = async (req, res) => {
   });
 };
 
-module.exports = { getAllProductsWithStats, getCustomers, getTransactions };
+const getUsersGeoLocation = async (req, res) => {
+  const users = await User.find();
+
+  const mappedLocations = users.reduce((acc, { country }) => {
+    // convert country ISO2 format from DB to ISO3
+    const countryISO3 = getCountryIso3(country);
+    // check if a key has been created for the ISO3 in the accumulator object
+    if (!acc[countryISO3]) {
+      acc[countryISO3] = 0;
+    }
+    acc[countryISO3]++;
+
+    return acc;
+  }, {});
+
+  // format mappedLocations object to FOrmat needed by Nivo API
+  const formattedMappedLocations = Object.entries(mappedLocations).map(
+    ([country, count]) => {
+      return { id: country, value: count };
+    }
+  );
+  res.status(200).json(formattedMappedLocations);
+};
+
+module.exports = {
+  getAllProductsWithStats,
+  getCustomers,
+  getTransactions,
+  getUsersGeoLocation,
+};
