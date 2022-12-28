@@ -9,6 +9,7 @@ import Dashboard from "scenes/dashboard/Index";
 import Layout from "scenes/layout/Index";
 import Products from "scenes/clients/products/Index";
 import Customers from "scenes/clients/customers/Index";
+import Transactions from "scenes/clients/transactions/Index";
 
 function App() {
   const mode = useSelector(getMode);
@@ -27,6 +28,7 @@ function App() {
               <Route path="/dashboard" element={<Dashboard />} />
               <Route path="/products" element={<Products />} />
               <Route path="/customers" element={<Customers />} />
+              <Route path="/transactions" element={<Transactions />} />
             </Route>
           </Routes>
         </ThemeProvider>
