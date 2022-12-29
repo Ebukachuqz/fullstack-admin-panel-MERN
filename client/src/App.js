@@ -11,6 +11,7 @@ import Products from "scenes/clients/products/Index";
 import Customers from "scenes/clients/customers/Index";
 import Transactions from "scenes/clients/transactions/Index";
 import Geolocation from "scenes/clients/geolocation/Index";
+import Overview from "scenes/sales/Overview/Index";
 
 function App() {
   const mode = useSelector(getMode);
@@ -31,6 +32,7 @@ function App() {
               <Route path="/customers" element={<Customers />} />
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/geolocation" element={<Geolocation />} />
+              <Route path="/overview" element={<Overview />} />
             </Route>
           </Routes>
         </ThemeProvider>
