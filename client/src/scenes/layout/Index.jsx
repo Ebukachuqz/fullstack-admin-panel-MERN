@@ -12,7 +12,7 @@ const Layout = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState(true);
   const userId = useSelector(getUserId);
   const { data } = useGetUserQuery(userId);
-  console.log(data);
+  // console.log(data);
   return (
     <Box width="100%" height="100%" display={isMobile ? "block" : "flex"}>
       <Sidebar

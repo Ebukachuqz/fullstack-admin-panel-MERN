@@ -12,7 +12,6 @@ import Customers from "scenes/clients/customers/Index";
 import Transactions from "scenes/clients/transactions/Index";
 import Geolocation from "scenes/clients/geolocation/Index";
 import Overview from "scenes/sales/Overview/Index";
-import Daily from "scenes/sales/daily/Index";
 import Monthly from "scenes/sales/monthly/Index";
 import Breakdown from "scenes/sales/breakdown/Index";
 import Admin from "scenes/management/admin/Index";
@@ -38,7 +37,6 @@ function App() {
               <Route path="/transactions" element={<Transactions />} />
               <Route path="/geolocation" element={<Geolocation />} />
               <Route path="/overview" element={<Overview />} />
-              <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />
               <Route path="/breakdown" element={<Breakdown />} />
               <Route path="/admin" element={<Admin />} />

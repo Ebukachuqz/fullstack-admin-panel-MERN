@@ -6,7 +6,6 @@ import { useGetSalesStatQuery } from "redux/api";
 const OverviewChart = ({ isDashboard = false, view }) => {
   const theme = useTheme();
   const { data, isLoading } = useGetSalesStatQuery();
-  console.log(data);
 
   const [totalSalesLine, totalUnitsLine] = useMemo(() => {
     if (!data) return [];

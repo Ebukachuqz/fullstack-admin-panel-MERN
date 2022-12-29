@@ -111,36 +111,40 @@ const Sidebar = ({
               })}
             </List>
           </Box>
-          <Divider />
-          <FlexBetween p="15px 20px" gap="5px">
-            <Box
-              component="img"
-              src={profilePicture}
-              alt="Profile Pic"
-              width="40px"
-              height="40px"
-              borderRadius="50%"
-              sx={{ objectFit: "cover" }}
-            />
-            <Box textAlign={"left"}>
-              <Typography
-                fontWeight={"bold"}
-                fontSize={"11px"}
-                sx={{ color: theme.palette.secondary[100] }}
-              >
-                {user.name}
-              </Typography>
-              <Typography
-                fontSize={"11px"}
-                sx={{ color: theme.palette.secondary[200] }}
-              >
-                {user.occupation}
-              </Typography>
-            </Box>
-            <IconButton>
-              <SettingsOutlined sx={{ color: theme.palette.secondary[300] }} />
-            </IconButton>
-          </FlexBetween>
+          <Box position="absolute" width={"100%"} bottom="10px">
+            <Divider />
+            <FlexBetween p="10px 20px" gap="5px">
+              <Box
+                component="img"
+                src={profilePicture}
+                alt="Profile Pic"
+                width="40px"
+                height="40px"
+                borderRadius="50%"
+                sx={{ objectFit: "cover" }}
+              />
+              <Box textAlign={"left"}>
+                <Typography
+                  fontWeight={"bold"}
+                  fontSize={"11px"}
+                  sx={{ color: theme.palette.secondary[100] }}
+                >
+                  {user.name}
+                </Typography>
+                <Typography
+                  fontSize={"11px"}
+                  sx={{ color: theme.palette.secondary[200] }}
+                >
+                  {user.occupation}
+                </Typography>
+              </Box>
+              <IconButton>
+                <SettingsOutlined
+                  sx={{ color: theme.palette.secondary[300] }}
+                />
+              </IconButton>
+            </FlexBetween>
+          </Box>
         </Drawer>
       )}
     </Box>

@@ -11,6 +11,7 @@ const adminApi = createApi({
     "Geolocation",
     "Sales",
     "Admins",
+    "Dashboard",
   ],
   endpoints: (builder) => ({
     getUser: builder.query({
@@ -49,6 +50,10 @@ const adminApi = createApi({
       query: (id) => `management/performance/${id}`,
       providesTags: ["Performance"],
     }),
+    getDashboardData: builder.query({
+      query: () => "general/dashboard",
+      providesTags: ["Dashboard"],
+    }),
   }),
 });
 
@@ -61,5 +66,6 @@ export const {
   useGetSalesStatQuery,
   useGetAdminsQuery,
   useGetUserStatQuery,
+  useGetDashboardDataQuery,
 } = adminApi;
 export default adminApi;

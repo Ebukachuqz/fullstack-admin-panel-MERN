@@ -45,10 +45,10 @@ const sidebarNavItems = [
     text: "Overview",
     icon: <PointOfSaleOutlined />,
   },
-  {
-    text: "Daily",
-    icon: <TodayOutlined />,
-  },
+  // {
+  //   text: "Daily",
+  //   icon: <TodayOutlined />,
+  // },
   {
     text: "Monthly",
     icon: <CalendarMonthOutlined />,
