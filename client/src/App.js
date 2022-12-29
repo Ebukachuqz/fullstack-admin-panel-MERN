@@ -15,6 +15,7 @@ import Overview from "scenes/sales/Overview/Index";
 import Daily from "scenes/sales/daily/Index";
 import Monthly from "scenes/sales/monthly/Index";
 import Breakdown from "scenes/sales/breakdown/Index";
+import Admin from "scenes/management/admin/Index";
 
 function App() {
   const mode = useSelector(getMode);
@@ -39,6 +40,7 @@ function App() {
               <Route path="/daily" element={<Daily />} />
               <Route path="/monthly" element={<Monthly />} />
               <Route path="/breakdown" element={<Breakdown />} />
+              <Route path="/admin" element={<Admin />} />
             </Route>
           </Routes>
         </ThemeProvider>
