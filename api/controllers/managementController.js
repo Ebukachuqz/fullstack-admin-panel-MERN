@@ -23,7 +23,7 @@ const userStats = async (req, res) => {
     { $unwind: "$affiliateStats" },
   ]);
 
-  console.log(userWithStats);
+  // console.log(userWithStats);
   const saleTransactions = await Promise.all(
     userWithStats[0].affiliateStats.affiliateSales.map((id) => {
       return Transaction.findById(id);
