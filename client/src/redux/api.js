@@ -45,6 +45,10 @@ const adminApi = createApi({
       query: () => "management/admins",
       providesTags: ["Admins"],
     }),
+    getUserStat: builder.query({
+      query: (id) => `management/performance/${id}`,
+      providesTags: ["Performance"],
+    }),
   }),
 });
 
@@ -56,5 +60,6 @@ export const {
   useGetUsersGeoLocationQuery,
   useGetSalesStatQuery,
   useGetAdminsQuery,
+  useGetUserStatQuery,
 } = adminApi;
 export default adminApi;

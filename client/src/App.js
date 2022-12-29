@@ -16,6 +16,7 @@ import Daily from "scenes/sales/daily/Index";
 import Monthly from "scenes/sales/monthly/Index";
 import Breakdown from "scenes/sales/breakdown/Index";
 import Admin from "scenes/management/admin/Index";
+import Performance from "scenes/management/performance/Index";
 
 function App() {
   const mode = useSelector(getMode);
@@ -41,6 +42,7 @@ function App() {
               <Route path="/monthly" element={<Monthly />} />
               <Route path="/breakdown" element={<Breakdown />} />
               <Route path="/admin" element={<Admin />} />
+              <Route path="/performance" element={<Performance />} />
             </Route>
           </Routes>
         </ThemeProvider>

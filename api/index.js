@@ -20,12 +20,14 @@ const {
   dataProductStat,
   dataTransaction,
   dataOverallStat,
+  dataAffiliateStat,
 } = require("./mock/data");
 const errorHandler = require("./middlewares/errorHandler");
 const Product = require("./models/Product");
 const ProductStat = require("./models/ProductStat");
 const Transaction = require("./models/Transaction");
 const OverallStat = require("./models/OverallStat");
+const AffiliateStat = require("./models/AffiliateStat");
 
 // Configurations
 const app = express();
@@ -61,5 +63,6 @@ mongoose
     // ProductStat.insertMany(dataProductStat);
     // Transaction.insertMany(dataTransaction);
     // OverallStat.insertMany(dataOverallStat);
+    // AffiliateStat.insertMany(dataAffiliateStat);
   })
   .catch((error) => console.log(error));
