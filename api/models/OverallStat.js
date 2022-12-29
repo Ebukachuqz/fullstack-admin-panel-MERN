@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const ProductStatSchema = new mongoose.Schema(
+const OverallStatSchema = new mongoose.Schema(
   {
-    productId: {
-      type: String,
+    totalCustomers: {
+      type: Number,
       // required: true,
     },
     yearlySalesTotal: {
@@ -50,8 +50,12 @@ const ProductStatSchema = new mongoose.Schema(
         },
       },
     ],
+    salesByCategory: {
+      type: Map,
+      of: Number,
+    },
   },
   { timestamps: true }
 );
 
-module.exports = mongoose.model("ProductStat", ProductStatSchema);
+module.exports = mongoose.model("OverallStat", OverallStatSchema);
